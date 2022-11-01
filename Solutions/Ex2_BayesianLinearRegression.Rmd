@@ -1,0 +1,22 @@
+---
+title: "Ex2_BayesianLinearRegression"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Solution to exercise 2: Bayesian linear regression
+
+We have the model
+
+
+$$
+\begin{aligned}
+y_i \mid \boldsymbol \beta &\sim \mathcal{N}(\boldsymbol  x_i^{T} \boldsymbol \beta, \phi^{-1}), \quad i=1,\ldots,n; \\
+\boldsymbol  \beta \mid \kappa &\sim \mathcal{N}(0,\kappa^{-1}\boldsymbol{\text{I}}); \\
+    \kappa &\sim \text{Gamma}(a_0, b_0);
+\end{aligned}
+$$
+where $\phi=1/\sigma^2$ is the precision parameter, which we assume is known, $\boldsymbol x_i, \ i=1,\ldots,n$ are known covariates, $\boldsymbol \beta \in \mathbb{R}^p$ includes the intercept, and is unknown, and $\boldsymbol{\text{I}}$ is the identity matrix. Assume $a_0$ and $b_0$ are known.
