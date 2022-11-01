@@ -38,26 +38,26 @@ $$
 For $\kappa$, the variational approximation is on the form 
 
 $$
-q(\kappa) \propto \text{Gamma}(a_n,b_n)
+q(\kappa) \propto \text{Gamma}(a_n,b_n);
 $$
 
 with 
 
 $$
-a_n= a_0+\frac{p}{2}, \quad b_n = b_0 + \mathbb{E}[\boldsymbol\beta^{T}\boldsymbol \beta]
+a_n= a_0+\frac{p}{2}, \quad b_n = b_0 + \mathbb{E}[\boldsymbol\beta^{T}\boldsymbol \beta].
 $$
 For $\boldsymbol\beta$, the variational approximation is on the form
 
 $$
-q(\boldsymbol\beta) \propto \mathcal{N}(\boldsymbol m_n, \boldsymbol S_n)
+q(\boldsymbol\beta) \propto \mathcal{N}(\boldsymbol m_n, \boldsymbol S_n);
 $$
 with 
 
 $$
-\boldsymbol S_n = (\mathbb{E}[\kappa]\boldsymbol{\text{I}} + \phi \boldsymbol X^{T} \boldsymbol X)^{-1}, \quad \boldsymbol m_n = \phi \boldsymbol S_n \boldsymbol X^{T}\boldsymbol y
+\boldsymbol S_n = (\mathbb{E}[\kappa]\boldsymbol{\text{I}} + \phi \boldsymbol X^{T} \boldsymbol X)^{-1}, \quad \boldsymbol m_n = \phi \boldsymbol S_n \boldsymbol X^{T}\boldsymbol y;
 $$
 where 
 
 $$
-\mathbb{E}[\kappa] = \frac{a_n}{b_n}, \quad \mathbb{E}[\boldsymbol\beta^{T}\boldsymbol \beta] = \boldsymbol m_n \boldsymbol m_n^{T}+ \boldsymbol S_n
+\mathbb{E}[\kappa] = \frac{a_n}{b_n}, \quad \mathbb{E}[\boldsymbol\beta^{T}\boldsymbol \beta] = \boldsymbol m_n \boldsymbol m_n^{T}+ \boldsymbol S_n.
 $$
