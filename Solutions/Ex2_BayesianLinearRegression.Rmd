@@ -44,7 +44,7 @@ $$
 with 
 
 $$
-a_n= a_0+\frac{p}{2}, \quad b_n = b_0 + \mathbb{E}[\boldsymbol\beta^{T}\boldsymbol \beta].
+a_n= a_0+\frac{p}{2}, \quad b_n = b_0 + \frac{\mathbb{E}[\boldsymbol\beta^{T}\boldsymbol \beta]}{2}.
 $$
 For $\boldsymbol\beta$, the variational approximation is on the form
 
