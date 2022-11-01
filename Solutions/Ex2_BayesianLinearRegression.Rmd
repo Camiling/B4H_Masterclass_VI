@@ -1,5 +1,5 @@
 ---
-title: "Ex2_BayesianLinearRegression"
+title: "Example 2: Bayesian Linear Regression"
 output: pdf_document
 ---
 
@@ -7,7 +7,7 @@ output: pdf_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Solution to exercise 2: Bayesian linear regression
+## Bayesian linear regression model
 
 We have the model
 
@@ -20,3 +20,44 @@ y_i \mid \boldsymbol \beta &\sim \mathcal{N}(\boldsymbol  x_i^{T} \boldsymbol \b
 \end{aligned}
 $$
 where $\phi=1/\sigma^2$ is the precision parameter, which we assume is known, $\boldsymbol x_i, \ i=1,\ldots,n$ are known covariates, $\boldsymbol \beta \in \mathbb{R}^p$ includes the intercept, and is unknown, and $\boldsymbol{\text{I}}$ is the identity matrix. Assume $a_0$ and $b_0$ are known.
+
+We want a mean-field approximation to the posterior 
+
+$$
+p(\boldsymbol \beta, \kappa \mid \boldsymbol y)
+$$
+
+on the form
+
+$$
+q(\boldsymbol \beta, \kappa) = q(\boldsymbol \beta) q(\kappa).
+$$
+
+## Solution
+
+For $\kappa$, the variational approximation is on the form 
+
+$$
+q(\kappa) \propto \text{Gamma}(a_n,b_n)
+$$
+
+with 
+
+$$
+a_n= a_0+\frac{p}{2}, \quad b_n = b_0 + \mathbb{E}[\boldsymbol\beta^{T}\boldsymbol \beta]
+$$
+For $\boldsymbol\beta$, the variational approximation is on the form
+
+$$
+q(\boldsymbol\beta) \propto \mathcal{N}(\boldsymbol m_n, \boldsymbol S_n)
+$$
+with 
+
+$$
+\boldsymbol S_n = (\mathbb{E}[\kappa]\boldsymbol{\text{I}} + \phi \boldsymbol X^{T} \boldsymbol X)^{-1}, \quad \boldsymbol m_n = \phi \boldsymbol S_n \boldsymbol X^{T}\boldsymbol y
+$$
+where 
+
+$$
+\mathbb{E}[\kappa] = \frac{a_n}{b_n}, \quad \mathbb{E}[\boldsymbol\beta^{T}\boldsymbol \beta] = \boldsymbol m_n \boldsymbol m_n^{T}+ \boldsymbol S_n
+$$
