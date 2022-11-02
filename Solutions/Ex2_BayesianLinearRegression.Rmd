@@ -44,7 +44,7 @@ $$
 with 
 
 $$
-a_n= a_0+\frac{p}{2}, \quad b_n = b_0 + \frac{\mathbb{E}[\boldsymbol\beta^{T}\boldsymbol \beta]}{2}.
+a_n= a_0+\frac{p}{2}, \quad b_n = b_0 + \frac{\mathbb{E}_{q_{\boldsymbol \beta}}[\boldsymbol\beta^{T}\boldsymbol \beta]}{2}.
 $$
 For $\boldsymbol\beta$, the variational approximation is on the form
 
@@ -54,10 +54,10 @@ $$
 with 
 
 $$
-\boldsymbol S_n = (\mathbb{E}[\kappa]\boldsymbol{\text{I}} + \phi \boldsymbol X^{T} \boldsymbol X)^{-1}, \quad \boldsymbol m_n = \phi \boldsymbol S_n \boldsymbol X^{T}\boldsymbol y;
+\boldsymbol S_n = (\mathbb{E}_{q_\kappa}[\kappa]\boldsymbol{\text{I}} + \phi \boldsymbol X^{T} \boldsymbol X)^{-1}, \quad \boldsymbol m_n = \phi \boldsymbol S_n \boldsymbol X^{T}\boldsymbol y;
 $$
 where 
 
 $$
-\mathbb{E}[\kappa] = \frac{a_n}{b_n}, \quad \mathbb{E}[\boldsymbol\beta^{T}\boldsymbol \beta] = \boldsymbol m_n^{T} \boldsymbol m_n+ \text{tr}(\boldsymbol S_n).
+\mathbb{E}_{q_\kappa}[\kappa] = \frac{a_n}{b_n}, \quad \mathbb{E}_{q_{\boldsymbol \beta}}[\boldsymbol\beta^{T}\boldsymbol \beta] = \boldsymbol m_n^{T} \boldsymbol m_n+ \text{tr}(\boldsymbol S_n).
 $$
