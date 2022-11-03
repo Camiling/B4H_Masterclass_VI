@@ -1,5 +1,5 @@
 ---
-title: "Example 2: Bayesian Linear Regression"
+title: "Exercise 2: Bayesian Linear Regression"
 output: pdf_document
 ---
 

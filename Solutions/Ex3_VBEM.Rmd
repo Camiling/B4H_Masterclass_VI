@@ -1,5 +1,5 @@
 ---
-title: "Example 3: Linear regression with empirical Bayes estimation for hyperparameters"
+title: "Exercise 3: Linear regression with empirical Bayes estimation for hyperparameters"
 output: pdf_document
 ---
 
