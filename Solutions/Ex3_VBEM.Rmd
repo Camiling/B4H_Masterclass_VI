@@ -21,6 +21,10 @@ y_i \mid \boldsymbol \beta &\sim \mathcal{N}(\boldsymbol  x_i^{T} \boldsymbol \b
 $$
 where $\boldsymbol x_i, \ i=1,\ldots,n$ are known covariates, $\boldsymbol \beta \in \mathbb{R}^p$ includes the intercept, and is unknown, and $\boldsymbol{\text{I}}$ is the identity matrix. Assume $a_0$ and $b_0$ are known. We now treat the precision parameter $\phi=1/\sigma^2$ as unknown.
 
+## Exercise
+
+Instead of fully variational approach, use VBEM to estimate the posterior by treating $\phi$ as a hyperparameter to update in the M-step. Implement the algorithm, and run on simulated data with one covariate $x_{i,1} \sim \mathcal{N}(0,1)$, $n=50$, $\beta_0 = -1, \beta_1 = 2$, $a_0=b_0=0.001$. Play around with different initial values for $\phi$ - is this choice important?
+
 ## Solution
 
 Instead of fully variational approach, we use VBEM to estimate the posterior by treating $\phi$ as a hyperparameter to update in the M-step. As the marginal likelihood is not available, we use the ELBO as a proxy. 
@@ -63,6 +67,6 @@ $$
 
 Notably, as this uses the ELBO as a proxy for the marginal likelihood, we should ensure the ELBO has converged before updating $\widehat{\phi}$. Thus, each time we update $\widehat{\phi}$ we should first run the VI updating scheme for $\boldsymbol \beta$ and $\kappa$ fully (until convergence).   
 
-
+R code is given in a separate file.
 
 

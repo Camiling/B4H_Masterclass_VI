@@ -21,6 +21,8 @@ y_i \mid \boldsymbol \beta &\sim \mathcal{N}(\boldsymbol  x_i^{T} \boldsymbol \b
 $$
 where $\phi=1/\sigma^2$ is the precision parameter, which we assume is known, $\boldsymbol x_i, \ i=1,\ldots,n$ are known covariates, $\boldsymbol \beta \in \mathbb{R}^p$ includes the intercept, and is unknown, and $\boldsymbol{\text{I}}$ is the identity matrix. Assume $a_0$ and $b_0$ are known.
 
+## Exercise 
+
 We want a mean-field approximation to the posterior 
 
 $$
@@ -32,6 +34,8 @@ on the form
 $$
 q(\boldsymbol \beta, \kappa) = q(\boldsymbol \beta) q(\kappa).
 $$
+
+First, derive the CAVI updates. Then implement the algorithm, and run on simulated data with one covariate $x_{i,1} \sim \mathcal{N}(0,1)$, $n=50$, $\phi=0.5$, $\beta_0 = -1, \beta_1 = 2$, $a_0=b_0=0.001$. Assess convergence by the variational factors, or derive the ELBO to assess convergence. Visualize the resulting bivariate Gaussian approximation for the intercept $\beta_0$ and coefficient $\beta_1$.
 
 ## Solution
 
@@ -58,6 +62,11 @@ $$
 $$
 where 
 
+
 $$
 \mathbb{E}_{q_\kappa}[\kappa] = \frac{a_n}{b_n}, \quad \mathbb{E}_{q_{\boldsymbol \beta}}[\boldsymbol\beta^{T}\boldsymbol \beta] = \boldsymbol m_n^{T} \boldsymbol m_n+ \text{tr}(\boldsymbol S_n).
 $$
+
+R code is given in a separate file.
+
+
